@@ -4,6 +4,7 @@ import SobreMim from "src/paginas/SobreMim";
 import NotFound from "src/paginas/NotFound";
 import Menu from "src/componentes/Menu";
 import React from "react";
+import PaginaPadrao from "./componentes/PaginaPadrao";
 
 function AppRoutes() {
   return (
@@ -11,9 +12,11 @@ function AppRoutes() {
       <BrowserRouter>
         <Menu />
         <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/sobre-mim" element={<SobreMim />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<PaginaPadrao/>} >
+            <Route index element={<Inicio/>} />
+            <Route path="/sobre-mim" element={<SobreMim />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </React.Fragment>
