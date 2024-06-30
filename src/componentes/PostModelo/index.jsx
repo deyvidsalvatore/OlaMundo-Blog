@@ -17,7 +17,7 @@ export default function PostModelo({ children, fotoCapa, titulo }) {
 }
 
 PostModelo.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.array.isRequired,
   fotoCapa: PropTypes.string.isRequired,
   titulo: PropTypes.string.isRequired,
 };

@@ -1,13 +1,13 @@
 import styles from "./Inicio.module.css";
 import posts from "src/json/posts.json";
-import Post from "src/componentes/Post";
+import PostCard from "src/componentes/PostCard";
 
 const Inicio = () => {
   return (
     <ul className={styles.posts}>
       {posts.map((post) => (
         <li key={post.id}>
-          <Post post={post} />
+          <PostCard post={post} />
         </li>
       ))}
     </ul>

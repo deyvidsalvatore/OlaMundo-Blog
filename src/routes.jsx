@@ -3,23 +3,30 @@ import Inicio from "src/paginas/Inicio";
 import SobreMim from "src/paginas/SobreMim";
 import NotFound from "src/paginas/NotFound";
 import Menu from "src/componentes/Menu";
-import React from "react";
-import PaginaPadrao from "./componentes/PaginaPadrao";
+import PaginaPadrao from "src/componentes/PaginaPadrao";
+import ScrollToTop from "src/componentes/ScrollToTop";
+import Rodape from "src/componentes/Rodape";
+import Post from "src/paginas/Post";
 
 function AppRoutes() {
   return (
-    <React.Fragment>
       <BrowserRouter>
+        <ScrollToTop />
         <Menu />
+        
         <Routes>
+          
           <Route path="/" element={<PaginaPadrao/>} >
             <Route index element={<Inicio/>} />
             <Route path="/sobre-mim" element={<SobreMim />} />
-            <Route path="*" element={<NotFound />} />
           </Route>
+
+          <Route path="posts/:id/*" element={<Post />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
+
+        <Rodape />
       </BrowserRouter>
-    </React.Fragment>
   );
 }
 
